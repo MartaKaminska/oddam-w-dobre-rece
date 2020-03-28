@@ -1,0 +1,13 @@
+/* Reset */
+@import '/path/to/reset-css/reset.css';
+
+/* Google Fonts */
+@import url(href:https://fonts.googleapis.com/css?family=Merriweather|Open+Sans&display=swap&subset=latin-ext);
+
+/* settings */
+@import 'settings/colors';
+@import 'settings/fonts';
+
+/* elements */
+
+@import 'elements/base';
