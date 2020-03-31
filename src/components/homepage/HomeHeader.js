@@ -1,8 +1,7 @@
 import React from 'react';
 
-export default function HomeHeader() {
-
+export default function HomeHeader({ id }) {
 	return (
-		<div>Home Header</div>
+		<div id={id}>Home Header</div>
 	)
 }

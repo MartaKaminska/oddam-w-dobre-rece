@@ -1,8 +1,7 @@
 import React from 'react';
 
-export default function HomeThreeColumns() {
-
+export default function HomeThreeColumns({ id }) {
 	return (
-		<div>Home Three Columns</div>
+		<div id={id}>Home Three Columns</div>
 	)
 }
