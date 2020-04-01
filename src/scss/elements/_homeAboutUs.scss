@@ -1,0 +1,46 @@
+.home-abour-us {
+	height: 100vh;
+	display: flex;
+	.about-left-column {
+		width: 50vw;
+		background-color: $background-color;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		h2 {
+			font-family: $font-base;
+			font-size: 28px;
+			color:$base-color;
+			margin-bottom: 25px;
+			text-align: center;
+		}
+		img {
+			margin-bottom: 25px;
+		}
+		p {
+			font-family: $font-base;
+			font-size: 20px;
+			line-height: 35px;
+			text-align: center;
+			margin: 0 5vw;
+		}
+		.about-sign {
+			align-self: flex-end;
+			width: 150px;
+			height: 100px;
+			margin: 20px 5vw;
+		}
+	}
+	.about-right-column {
+		height: 100vh;
+		width: 50vw;
+		background-image: contain;
+		display: flex;
+		justify-content: flex-start;
+		overflow: hidden;
+		img {
+		height: 100vh;
+		width: auto;
+		}
+	}
+}

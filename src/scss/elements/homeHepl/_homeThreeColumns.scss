@@ -1,0 +1,39 @@
+.home-three-columns {
+	height: 320px;
+	background-image: url('../../../assets/3\ Columns\ Background.png');
+	background-size: contain;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	div {
+		width: 334px;
+		height: 252px;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-around;
+		text-align: center;
+		margin-right: 10px;
+		h3 {
+			font-size: 90px;
+			font-family: $font-base;
+			font-weight: 300;
+			color: $base-color;
+			margin-bottom: 10px;
+			line-height: 122px;
+		}
+		p {
+			font-family: $font-alt;
+			font-weight: 300;
+			color: $base-color;
+			font-size: 14px;
+			line-height: 20px;
+		}
+		.name {
+			text-transform: uppercase;
+			font-family: $font-base;
+			color: $base-color;
+			font-size: 18px;
+			margin-bottom: 28px;
+		}
+	}
+}

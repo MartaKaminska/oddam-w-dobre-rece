@@ -1,13 +1,19 @@
 /* Reset */
-@import '/path/to/reset-css/reset.css';
+@import '~reset.css/reset.css';
 
 /* Google Fonts */
-@import url(href:https://fonts.googleapis.com/css?family=Merriweather|Open+Sans&display=swap&subset=latin-ext);
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400&family=Open+Sans:wght@300;400&display=swap');
 
 /* settings */
 @import 'settings/colors';
 @import 'settings/fonts';
 
 /* elements */
-
 @import 'elements/base';
+@import 'elements/topMenu';
+@import 'elements/homeHeader';
+@import 'elements/homeHepl/homeHelp';
+@import 'elements/homeAboutUs';
+
+/* media queries */
+@import 'media';

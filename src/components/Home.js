@@ -1,21 +1,17 @@
 import React from 'react';
 // elements
-import HomeHeader from './homepage/HomeHeader';
-import HomeThreeColumns from './homepage/HomeThreeColumns';
-import HomeFourSteps from './homepage/HomeFourSteps';
+import HomeHeader from './homepage/header/HomeHeader';
+import HomeHelp from './homepage/help/HomeHelp';
 import HomeAboutUs from './homepage/HomeAboutUs';
 import HomeWhoWeHelp from './homepage/HomeWhoWeHelp';
 import HomeContact from './homepage/HomeContact';
-import BottomMenu from './BottomMenu';
 
 export default function Home() {
-	return <div>
-		<BottomMenu />
+	return <>
 		<HomeHeader id="homeHeader" />
-		<HomeThreeColumns id="homeThreeColumns"/>
-		<HomeFourSteps id="homeFourSteps"/>
+		<HomeHelp id="homeHelp"/>
 		<HomeAboutUs id="homeAboutUs"/>
 		<HomeWhoWeHelp id="homeWhoWeHelp"/>
 		<HomeContact id="homeContact"/>
-	</div>
+	</>
 }

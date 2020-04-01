@@ -4,12 +4,13 @@ import { Link } from 'react-scroll';
 export default function BottomMenu() {
 	return <nav className='bottom-menu'>
 		<ul>
-			<li><Link >Start</Link></li>
+			<li>Start</li>
 			<li>
 				<Link 
 					activeClass="active-bottom-menu"
-					to="homeFourSteps" 
-					smooth={true} 
+					to="homeHelp"
+					spy={true}
+					smooth={true}
 					duration={500}>
 						O co chodzi
 				</Link>
@@ -18,7 +19,8 @@ export default function BottomMenu() {
 				<Link 
 					activeClass="active-bottom-menu"
 					to="homeAboutUs" 
-					smooth={true} 
+					spy={true}
+					smooth={true}
 					duration={500}>
 						O nas
 				</Link>
@@ -27,7 +29,8 @@ export default function BottomMenu() {
 				<Link 
 					activeClass="active-bottom-menu"
 					to="homeWhoWeHelp" 
-					smooth={true} 
+					spy={true}
+					smooth={true}
 					duration={500}>
 						Fundacje i organizacje
 				</Link>
@@ -36,7 +39,8 @@ export default function BottomMenu() {
 				<Link 
 					activeClass="active-bottom-menu"
 					to="homeContact" 
-					smooth={true} 
+					spy={true}
+					smooth={true}
 					duration={500}>
 						Kontakt
 				</Link>
