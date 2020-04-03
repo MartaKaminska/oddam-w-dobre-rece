@@ -12,7 +12,7 @@
 		margin-bottom: 25px;
 		text-align: center;
 	}
-	button {
+	.donate-button {
 		margin: 35px auto 80px;
 		width: 310px;
 		height: 120px;
@@ -23,6 +23,10 @@
 		font-family: $font-base;
 		font-weight: 300;
 		border: 0.75px solid$base-color;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		text-align: center;
 		a {
 			text-decoration: none;
 			color: $base-color;

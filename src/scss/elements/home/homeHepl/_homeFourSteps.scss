@@ -19,14 +19,14 @@
 			font-family: $font-base;
 			font-size: 18px;
 			text-align: center;
-		}
-		.step::after {
-			content:'';
-			display: block;
-			width: 40%;
-			height: 0.5px;
-			background: $base-color;
-			margin: 10px 0 10px 30%;
+			&:after {
+				content:'';
+				display: block;
+				width: 40%;
+				height: 0.5px;
+				background: $base-color;
+				margin: 10px 0 10px 30%;
+			}
 		}
 		p {
 			font-family: $font-base;

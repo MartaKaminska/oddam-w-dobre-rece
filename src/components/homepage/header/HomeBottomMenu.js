@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-scroll';
 
-export default function BottomMenu() {
+export default function HomeBottomMenu() {
 	return <nav className='bottom-menu'>
 		<ul>
 			<li>Start</li>

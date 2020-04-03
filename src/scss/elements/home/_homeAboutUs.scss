@@ -1,4 +1,4 @@
-.home-abour-us {
+.home-about-us {
 	height: 100vh;
 	display: flex;
 	.about-left-column {
@@ -34,13 +34,13 @@
 	.about-right-column {
 		height: 100vh;
 		width: 50vw;
-		background-image: contain;
+		background-size: cover;
 		display: flex;
 		justify-content: flex-start;
 		overflow: hidden;
 		img {
-		height: 100vh;
-		width: auto;
+			height: 100vh;
+			width: auto;
 		}
 	}
 }

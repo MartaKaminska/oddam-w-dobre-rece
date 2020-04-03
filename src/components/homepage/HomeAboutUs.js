@@ -5,7 +5,7 @@ import signature from '../../assets/Signature.svg';
 import image from '../../assets/People.jpg';
 
 export default function AboutUs({ id }) {
-	return <div className="home-abour-us" id={id} >
+	return <div className="home-about-us" id={id} >
 		<div className="about-left-column">
 			<h2>O nas</h2>
 			<img src={decoration} alt="decoration" />

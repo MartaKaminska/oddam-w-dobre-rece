@@ -1,4 +1,5 @@
 import React from 'react';
+// elements
 import decoration from '../../assets/Decoration.svg';
 
 export default function HomeWhoWeHelp({ id }) {
