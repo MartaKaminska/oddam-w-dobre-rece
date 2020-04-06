@@ -1,0 +1,19 @@
+.panel-menu {
+	font-family: $font-base;
+	ul {
+		position: absolute;
+		top: 90px;
+		right: 0;
+		display: flex;
+		justify-content: flex-end;
+		li {
+			padding: 9px 20px;
+			font-size: 18px;
+			a {
+				color: $base-color;
+				text-decoration: none;
+				cursor: pointer;
+			}
+		}
+	}
+}

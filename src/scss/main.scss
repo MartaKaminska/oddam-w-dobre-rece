@@ -11,10 +11,10 @@
 /* elements */
 @import 'elements/base';
 @import 'elements/topMenu';
-@import 'elements/home/homeHeader';
-@import 'elements/home/homeHepl/homeHelp';
-@import 'elements/home/homeAboutUs';
-@import 'elements/home/homeContact';
+@import 'elements/panelMenu';
+@import 'elements/home/homeMain';
+@import 'elements/footer';
+@import 'elements/regLogin';
 
 /* media queries */
 @import 'media';

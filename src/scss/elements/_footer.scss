@@ -1,0 +1,19 @@
+.footer {
+	width: 90vw;
+	font-family: $font-base;
+	font-size: 18px;
+	display: flex;
+	margin: 0 auto 22px;
+	z-index: 1;
+	position: absolute;
+	bottom: 0;
+	justify-content: center;
+	div {
+		justify-items: flex-end;
+		img {
+			height: 18px;
+			width: auto;
+			margin-right: 10px;
+		}
+	}
+}

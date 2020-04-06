@@ -22,21 +22,21 @@ export const formValidation = () => {
 		payload: true
 	};
 };
-export const formValidationName = () => {
+export const formValidationName = (state) => {
 	return {
 		type: 'FORM_VALIDATION_NAME',
-		payload: false
+		payload: state
 	};
 };
-export const formValidationEmail = () => {
+export const formValidationEmail = (state) => {
 	return {
 		type: 'FORM_VALIDATION_EMAIL',
-		payload: false
+		payload: state
 	};
 };
-export const formValidationContent = () => {
+export const formValidationContent = (state) => {
 	return {
 		type: 'FORM_VALIDATION_CONTENT',
-		payload: false
+		payload: state
 	};
 };

@@ -1,13 +1,13 @@
 import React from 'react';
 import { HashRouter, Switch, Route } from 'react-router-dom';
 // components
-import Home from './components/Home';
+import Home from './components/homepage/Home';
 import Login from './components/Login';
 import Register from './components/Register';
 import Logout from './components/Logout';
 import Form from './components/Form.js';
 import Footer from './components/Footer';
-import TopMenu from './components/TopMenu';
+import TopMenu from './components/navigation/TopMenu';
 
 function App() {
   return <HashRouter>
