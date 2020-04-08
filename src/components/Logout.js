@@ -9,13 +9,13 @@ export default function Logout() {
 		<PanelMenu />
 		<h2>Wylogowanie nastąpiło pomyślnie!</h2>
 		<img src={decoration} alt="decoration" />
-		
-		<div className="buttons">
-			<NavLink to='/' 
-				activeClassName="active-top-menu">
-					Strona główna
-			</NavLink>
-		</div>
+		<form>
+			<div className="buttons logout">
+				<NavLink to='/'>
+						Strona główna
+				</NavLink>
+			</div>
+		</form>
 	</div>
 }
 

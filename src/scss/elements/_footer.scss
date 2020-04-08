@@ -5,11 +5,13 @@
 	display: flex;
 	margin: 0 auto 22px;
 	z-index: 1;
-	position: absolute;
+	position: relative;
 	bottom: 0;
 	justify-content: center;
 	div {
 		justify-items: flex-end;
+		position: absolute;
+		right: 20px;
 		img {
 			height: 18px;
 			width: auto;

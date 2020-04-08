@@ -15,7 +15,7 @@ function Login(props) {
 	}
 	const validate = (e) => {
 		e.preventDefault();
-		props.loginValidation();
+		props.loginValidation(true);
 	}
 	return <div className="login">
 		<PanelMenu />
@@ -42,15 +42,13 @@ function Login(props) {
 					</div>
 				</div>
 				<div className="buttons">
-					<NavLink to='/register' 
-						activeClassName="active-top-menu">
+					<NavLink to='/register'>
 							Załóż konto
 					</NavLink>
-					<button 
-						type="submit"
+					<NavLink to='/' 
 						onClick={(e) => validate(e)}>
 							Zaloguj się
-					</button>
+					</NavLink>
 				</div>
 			</form>
 		

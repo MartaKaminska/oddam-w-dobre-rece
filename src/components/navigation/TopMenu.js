@@ -1,20 +1,22 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { loginValidation, registerValidation } from '../../actions/regLoginForm';
+import { loginEmail, loginPassword, confRegisterPassword, loginValidation, registerValidation } from '../../actions/regLoginForm';
 import { NavLink } from 'react-router-dom';
 
 function TopMenu(props) {
-	const validate = () => {
-		// e.preventDefault();
-		// props.loginValidation(false);
-		// props.registerValidation(false)
+	const logout = () => {
+		props.loginValidation(false);
+		props.registerValidation(false)
+		props.loginEmail('');
+		props.loginPassword('');
+		props.confRegisterPassword('');
 	}
-	console.log(props)
 	const show = () => {
-		if(props.loginValidation || props.registerValidation) {
+		if(props.login || props.register) {
 			return <ul className="top-menu">
 				<li>{props.email}</li>
-				<li onClick={validate()}><NavLink to='/logout' activeClassName="active-top-menu">Wyloguj</NavLink></li>
+				<li><NavLink to='/form' activeClassName="active-top-menu">Oddaj rzeczy</NavLink></li>
+				<li onClick={logout}><NavLink to='/logout' activeClassName="active-top-menu">Wyloguj</NavLink></li>
 			</ul>
 		} else {
 			return <ul className="top-menu">
@@ -28,9 +30,11 @@ function TopMenu(props) {
 const mapStateToProps = state => {
 	return {
 		email: state.loginEmail,
-		loginValidation: state.loginValidation,
-		registerValidation: state.registerValidation
+		password: state.loginPassword,
+		confPassword: state.confRegisterPassword,
+		login: state.loginValidation,
+		register: state.registerValidation
 	}
 }
 
-export default connect(mapStateToProps, { loginValidation, registerValidation })(TopMenu);
+export default connect(mapStateToProps, { loginEmail, loginPassword, confRegisterPassword, loginValidation, registerValidation })(TopMenu);

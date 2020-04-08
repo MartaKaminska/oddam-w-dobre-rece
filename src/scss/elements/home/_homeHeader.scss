@@ -20,6 +20,7 @@
 	width: 47vw;
 	min-width: 420px;
 	font-family: $font-base;
+	color: $base-color;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
@@ -34,8 +35,8 @@
 			li {
 				padding: 9px 20px;
 				font-size: 18px;
-				color: $base-color;
 				a {
+					color: $base-color;
 					text-decoration: none;
 					cursor: pointer;
 				}

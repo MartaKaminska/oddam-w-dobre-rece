@@ -16,10 +16,10 @@ export const confRegisterPassword = (confPassword) => {
 		payload: confPassword
 	};
 };
-export const loginValidation = () => {
+export const loginValidation = (state) => {
 	return {
 		type: 'LOGIN_VALIDATION',
-		payload: true
+		payload: state
 	};
 };
 export const registerValidationEmail = (state) => {
@@ -40,9 +40,9 @@ export const registerValidationConfPassword = (state) => {
 		payload: state
 	};
 };
-export const registerValidation = () => {
+export const registerValidation = (state) => {
 	return {
 		type: 'REGISTER_VALIDATION',
-		payload: true
+		payload: state
 	};
 };

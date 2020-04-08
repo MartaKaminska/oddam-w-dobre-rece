@@ -39,7 +39,9 @@ function Register(props) {
 			props.registerValidationConfPassword(true);
 		}
 		if(check === 0) {
-			props.registerValidation();
+			console.log('check = ',check)
+			props.registerValidation(true);
+			
 		}
 	console.log(props)
 	}
@@ -86,11 +88,10 @@ function Register(props) {
 						activeClassName="active-top-menu">
 							Zaloguj się
 					</NavLink>
-					<button 
-						type="submit"
+					<NavLink to='/' 
 						onClick={(e) => validate(e)}>
 							Załóż konto
-					</button>
+					</NavLink>
 				</div>
 			</form>
 		
@@ -102,11 +103,10 @@ const mapStateToProps = state => {
 		email: state.loginEmail,
 		password: state.loginPassword,
 		confPassword: state.confRegisterPassword,
-		valid: state.loginValidation,
 		validEmail: state.registerValidationEmail,
 		validPassword: state.registerValidationPassword,
 		validConfPassword: state.registerValidationConfPassword,
-		registerValidation: state.registerValidation
+		validation: state.registerValidation
 	}
 }
 

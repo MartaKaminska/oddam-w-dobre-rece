@@ -1,0 +1,112 @@
+.form-content {
+	font-family: $font-base;
+	color: $base-color;
+	position: relative;
+	h3 {
+		width: 900;
+		font-size: 20px;
+		color: $black-color;
+		margin-bottom: 5px;
+	}
+	.important {
+		padding-left: 10vw;
+		height: 20vh;
+		background-color: $important-color;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+	}
+	.content {
+		height: 80vh;
+		background-image: url('../../../assets/Background-Form.jpg');
+		background-size: cover;
+		padding-left: 10vw;
+		p {
+			font-size: 14px;
+			font-weight: 300;
+			padding: 20px 0;
+		}
+		.valid-text {
+			color: $warning-color;
+			padding: 0;
+		}
+		form {
+			h3 {
+				margin: 20px 0;
+			}
+			label > text {
+				margin-right: 20px;
+			}
+			li {
+				margin: 2vh 0;
+				input {
+					display: none;
+				}
+				span {
+					&::before {
+						content: '';
+						display: inline-block;
+						width: 10px;
+						height: 10px;
+						border: 1px solid $base-color;
+						margin-right: 15px;
+					}
+				}
+				.checked span::before {
+						background-color: $important-color;
+				}
+			}
+			.dropdown-element {
+				label {
+					display: inline-block;
+					margin-right: 20px;
+				}
+				.ui.dropdown {
+					height: 10px;
+					min-width: 200px;
+					border-radius: 0;
+					border: 1px solid $base-color;
+					background-color: rgba(0,0,0,0);
+					.text {
+						height: 16px;
+						color: $base-color;
+						font-size: 16px;
+						margin: 0;
+					}
+					.icon::before {
+						content: none;
+					}
+					.icon {
+						background-image: url('../../../assets/Icon-Arrow-Down.svg');
+						background-size: contain;
+						background-repeat: no-repeat;
+						background-position: bottom;
+					}
+				}
+			}
+		}
+		button.prev {
+			width: 130px;
+			height: 50px;
+			font-size: 16px;
+			color:$base-color;
+			background-color: rgba(0,0,0,0);
+			border: 1px solid $base-color;
+			cursor: pointer;
+			position: absolute;
+			bottom: 15vh;
+		}
+		button.next {
+			width: 130px;
+			height: 50px;
+			font-size: 16px;
+			color:$base-color;
+			background-color: rgba(0,0,0,0);
+			border: 1px solid $base-color;
+			cursor: pointer;
+			position: absolute;
+			bottom: 15vh;
+			left: 300px;
+		}
+	}
+}

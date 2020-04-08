@@ -1,0 +1,80 @@
+.content-step-3 {
+	.ui.dropdown {
+		width: 200px;
+		height: 10px;
+		min-width: 200px;
+		border-radius: 0;
+		border: 1px solid $base-color;
+		background-color: rgba(0,0,0,0);
+		.text.default {
+			color: $base-color;
+			height: 16px;
+			font-size: 16px;
+			margin: 0;
+		}
+		.icon::before {
+			content: none;
+		}
+		.icon {
+			background-image: url('../../../assets/Icon-Arrow-Down.svg');
+			background-size: contain;
+			background-repeat: no-repeat;
+			background-position: bottom;
+		}
+	}
+	h4 {
+		margin: 20px 0;
+		font-weight: 900;
+	}
+	ul {
+		width: 50vw;
+		display: flex;
+		flex-direction: row;
+		flex-wrap: wrap;
+		text-align: center;
+		line-height: 30px;
+		li {
+			label {
+				
+				input {
+					display: none;
+				}
+				@mixin before() {
+					display: inline-block;
+					cursor: pointer;
+					height: 30px;
+					border: 1px solid $base-color;
+					// margin-right: 15px;
+				}
+				span.children::before {
+					content: 'dzieciom';
+					@include before;
+					width: 100px;
+				}
+				span.singleMother::before {
+					content: 'samotnym matkom';
+					@include before;
+					width: 180px;
+				}
+				span.homeless::before {
+					content: 'bezdomnym';
+					@include before;
+					width: 120px;
+				}
+				span.disabled::before {
+					content: 'niepełnosprawnym';
+					@include before;
+					width: 170px;
+
+				}
+				span.elderlyPerson::before {
+					content: 'osobom starsym';
+					@include before;
+					width: 160px;
+
+				}
+			}
+
+		}
+	}
+}
