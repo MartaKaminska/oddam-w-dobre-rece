@@ -1,4 +1,4 @@
-.content-step-3 {
+.content-step-three {
 	.ui.dropdown {
 		width: 200px;
 		height: 10px;
@@ -22,10 +22,6 @@
 			background-position: bottom;
 		}
 	}
-	h4 {
-		margin: 20px 0;
-		font-weight: 900;
-	}
 	ul {
 		width: 50vw;
 		display: flex;
@@ -42,9 +38,9 @@
 				@mixin before() {
 					display: inline-block;
 					cursor: pointer;
-					height: 30px;
+					height: 40px;
+					line-height: 40px;
 					border: 1px solid $base-color;
-					// margin-right: 15px;
 				}
 				span.children::before {
 					content: 'dzieciom';
@@ -71,10 +67,8 @@
 					content: 'osobom starsym';
 					@include before;
 					width: 160px;
-
 				}
 			}
-
 		}
 	}
 }

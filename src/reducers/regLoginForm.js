@@ -40,9 +40,9 @@ export const registerValidationConfPassword = ( confPassword = true, action ) =>
 	};
 	return confPassword;
 };
-export const registerValidation = ( loginValid = false, action ) => {
+export const registerValidation = ( registerValid = false, action ) => {
 	if(action.type === 'REGISTER_VALIDATION'){
 		return action.payload;
 	};
-	return loginValid;
+	return registerValid;
 };

@@ -15,6 +15,5 @@ export default function AboutUs({ id }) {
 		<div className="about-right-column">
 			<img src={image} alt="smiling people" />
 		</div>
-
 	</div>
 }

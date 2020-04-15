@@ -9,7 +9,7 @@ import Form from './components/form/Form.js';
 import Footer from './components/Footer';
 import TopMenu from './components/navigation/TopMenu';
 
-function App() {
+export default function App() {
   return <HashRouter>
     <TopMenu />
     <Switch>
@@ -22,5 +22,3 @@ function App() {
   <Footer />
   </HashRouter>;
 }
-
-export default App;

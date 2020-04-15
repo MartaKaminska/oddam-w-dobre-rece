@@ -1,10 +1,9 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { formName, formEmail, formContent, formValidation, formValidationName, formValidationEmail, formValidationContent } from '../../../actions/homeForm';
+import { formName, formEmail, formContent, formValidation, formValidationName, formValidationEmail, formValidationContent } from '../../actions/homeForm';
 // elements
-import image from '../../../assets/Background-Contact-Form.jpg';
-import decoration from '../../../assets/Decoration.svg';
-import validate from './validateContactForm';
+import image from '../../assets/Background-Contact-Form.jpg';
+import decoration from '../../assets/Decoration.svg';
 
 function HomeContact(props) {
 	const handleChangeName = (e) => {
@@ -18,50 +17,45 @@ function HomeContact(props) {
 	}
 	const validateForm = (e) => {
 		e.preventDefault();
-		validate();
+		let name = props.name.split(' ');
+		let emailTest = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+		let check = 0;
+		if(name.length !== 1 || name[0] === ''){
+			props.formValidationName(false);
+			check = 1;
+		} else {
+			props.formValidationName(true);
+		}
+		if(!emailTest.test(props.email)) {
+			props.formValidationEmail(false);
+			check = 1;
+		} else {
+			props.formValidationEmail(true);
+		}
+		if(props.content.length < 120) {
+			props.formValidationContent(false);
+			check = 1;
+		} else {
+			props.formValidationContent(true);
+		}
+		if(check === 0) {
+			props.formValidation();
+			const message = {
+				name: props.name,
+				email: props.email,
+				message: props.content
+			};
+			fetch('https://fer-api.coderslab.pl/v1/portfolio/contact', {
+				headers: {
+					'Content-Type': 'application/json'
+				},
+				method: 'POST',
+				body: JSON.stringify(message)
+			});
+		}
 		console.log(props)
 	}
-		// e.preventDefault();
-		// let name = props.name.split(' ');
-		// let emailTest = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-		// let check = 0;
-		// if(name.length !== 1 || name[0] === ''){
-		// 	props.formValidationName(false);
-		// 	check = 1;
-		// } else {
-		// 	props.formValidationName(true);
-		// }
-		// if(!emailTest.test(props.email)) {
-		// 	props.formValidationEmail(false);
-		// 	check = 1;
-		// } else {
-		// 	props.formValidationEmail(true);
-		// }
-		// if(props.content.length < 120) {
-		// 	props.formValidationContent(false);
-		// 	check = 1;
-		// } else {
-		// 	props.formValidationContent(true);
-		// }
-		// if(check === 0) {
-		// 	props.formValidation();
-		// 	const message = {
-		// 		name: props.name,
-		// 		email: props.email,
-		// 		message: props.content
-		// 	};
-		// 	fetch('https://fer-api.coderslab.pl/v1/portfolio/contact', {
-		// 		headers: {
-		// 			'Content-Type': 'application/json'
-		// 		},
-		// 		method: 'POST',
-		// 		body: JSON.stringify(message)
-		// 	});
-		// }
-		// console.log(props)
-	// }
-	
-		return <div className="home-contact" id={props.id}>
+	return <div className="home-contact" id={props.id}>
 		<div className="contact-left-column">
 			<img src={image} alt="clothes"/>
 		</div>
@@ -111,7 +105,6 @@ function HomeContact(props) {
 		</div>
 	</div>
 }
-
 const mapStateToProps = state => {
 	return {
 		name: state.name,

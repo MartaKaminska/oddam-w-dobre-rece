@@ -7,6 +7,7 @@ import ContentStepTwo from './ContentStepTwo';
 import ContentStepThree from './ContentStepThree';
 import ContentStepFour from './ContentStepFour';
 import ContentSummary from './ContentSummary';
+import ContentThanks from './ContentThanks';
 
 function FormContent({ step }) {
 	const show = () => {
@@ -18,8 +19,10 @@ function FormContent({ step }) {
 			return <ContentStepThree />
 		} else if(step === 4) {
 			return <ContentStepFour />
-		} else {
+		} else if(step === 5) {
 			return <ContentSummary />
+		} else if(step === 6) {
+			return <ContentThanks />
 		}
 	}
 	return <div className="form-content">

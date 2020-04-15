@@ -40,3 +40,45 @@ export const formOrganization = (name) => {
 		payload: name
 	};
 };
+export const formAddressStreet = (street) => {
+	return {
+		type: 'FORM_ADDRESS_STREET',
+		payload: street
+	};
+};
+export const formAddressCity = (city) => {
+	return {
+		type: 'FORM_ADDRESS_CITY',
+		payload: city
+	};
+};
+export const formAddressCode = (code) => {
+	return {
+		type: 'FORM_ADDRESS_CODE',
+		payload: code
+	};
+};
+export const formAddressTelephone = (number) => {
+	return {
+		type: 'FORM_ADDRESS_TELEPHONE',
+		payload: number
+	};
+};
+export const formPickUpDate = (date) => {
+	return {
+		type: 'FORM_PICKUP_DATE',
+		payload: date
+	};
+};
+export const formPickUpHour = (hour) => {
+	return {
+		type: 'FORM_PICKUP_HOUR',
+		payload: hour
+	};
+};
+export const formPickUpNotes = (notes) => {
+	return {
+		type: 'FORM_PICKUP_NOTES',
+		payload: notes
+	};
+};

@@ -4,7 +4,7 @@ import HomeHeader from './header/HomeHeader';
 import HomeDonations from './donations/HomeDonations';
 import HomeAboutUs from './HomeAboutUs';
 import HomeWhoWeHelp from './whoWeHelp/HomeWhoWeHelp';
-import HomeContact from './contact/HomeContact';
+import HomeContact from './HomeContact';
 
 export default function Home() {
 	return <>

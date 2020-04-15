@@ -27,46 +27,46 @@ function ContentStepOne(props) {
 				<h3>Zaznacz co chcesz oddać:</h3>
 				<ul>
 					<li>
-						<label className={props.donation === 'clothesToUse' ? 'checked' : null}>
+						<label className={props.donation === 'ubrania, które nadają się do ponownego użycia' ? 'checked' : null}>
 							<input
 								type='radio'
-								value='clothesToUse'
+								value='ubrania, które nadają się do ponownego użycia'
 								onClick={(e) => radioChange(e)} />
 							<span>ubrania, które nadają się do ponownego użycia</span>
 						</label>
 					</li>
 					<li>
-						<label className={props.donation === 'clothesToTrash' ? 'checked' : ''}>
+						<label className={props.donation === 'ubrania, do wyrzucenia' ? 'checked' : ''}>
 							<input
 								type='radio'
-								value='clothesToTrash'
+								value='ubrania, do wyrzucenia'
 								onClick={(e) => radioChange(e)} />
 							<span>ubrania, do wyrzucenia</span>
 						</label>
 					</li>
 					<li>
-						<label className={props.donation === 'toys' ? 'checked' : ''}>
+						<label className={props.donation === 'zabawki' ? 'checked' : ''}>
 							<input
 								type='radio'
-								value='toys'
+								value='zabawki'
 								onClick={(e) => radioChange(e)} />
 							<span>zabawki</span>
 						</label>
 					</li>
 					<li>
-						<label className={props.donation === 'books' ? 'checked' : ''}>
+						<label className={props.donation === 'książki' ? 'checked' : ''}>
 							<input
 								type='radio'
-								value='books'
+								value='książki'
 								onClick={(e) => radioChange(e)} />
 							<span>książki</span>
 						</label>
 					</li>
 					<li>
-						<label className={props.donation === 'other' ? 'checked' : ''}>
+						<label className={props.donation === 'inne' ? 'checked' : ''}>
 							<input
 								type='radio'
-								value='other'
+								value='inne'
 								onClick={(e) => radioChange(e)} />
 							<span>inne</span>
 						</label>

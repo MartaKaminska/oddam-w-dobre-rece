@@ -3,7 +3,7 @@ import React from 'react';
 import PanelMenu from '../navigation/PanelMenu';
 import FormTop from './FormTop';
 import FormContent from './formContent/FormContent';
-import HomeContactForm from '../homepage/contact/HomeContact';
+import HomeContactForm from '../homepage/HomeContact';
 
 export default function Form() {
 	return <>

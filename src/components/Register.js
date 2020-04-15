@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { loginEmail, loginPassword, confRegisterPassword, registerValidationEmail, registerValidationPassword, registerValidationConfPassword, registerValidation } from '../actions/regLoginForm';
-import { NavLink } from 'react-router-dom'
+import { NavLink, Link } from 'react-router-dom'
 // elements
 import PanelMenu from './navigation/PanelMenu';
 import decoration from '../assets/Decoration.svg';
@@ -17,9 +17,8 @@ function Register(props) {
 		props.confRegisterPassword(e.target.value);
 	}
 	const validate = (e) => {
-		e.preventDefault();
-		let emailTest = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 		let check = 0;
+		let emailTest = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 		if(!emailTest.test(props.email)) {
 			props.registerValidationEmail(false);
 			check = 1;
@@ -39,13 +38,21 @@ function Register(props) {
 			props.registerValidationConfPassword(true);
 		}
 		if(check === 0) {
-			console.log('check = ',check)
 			props.registerValidation(true);
-			
 		}
-	console.log(props)
+		console.log(props)
 	}
-
+	const conditionalRender = () => {
+		if(props.validation === true) {
+			return <NavLink to='/' >
+				Załóż konto
+			</NavLink>
+		} else {
+			return <div onClick={validate} >
+				Załóż konto
+			</div>
+		}
+	}
 	return <div className="login">
 		<PanelMenu />
 		<h2>Zaloguj się</h2>
@@ -71,7 +78,6 @@ function Register(props) {
 							value={props.password} />
 					</div>
 					{!props.validPassword && <p className="valid-text">Hasło musi mieć conajmniej 6 znaków</p>}
-
 					<div className="form-input">
 						<label htmlFor="confPassword">Powtórz hasło</label>
 						<input 
@@ -81,23 +87,17 @@ function Register(props) {
 							value={props.confPassword} />
 					</div>
 					{!props.validConfPassword && <p className="valid-text">Wpisz poprawnie podane wcześniej hasło</p>}
-
 				</div>
 				<div className="buttons">
 					<NavLink to='/login' 
 						activeClassName="active-top-menu">
 							Zaloguj się
 					</NavLink>
-					<NavLink to='/' 
-						onClick={(e) => validate(e)}>
-							Załóż konto
-					</NavLink>
+					{conditionalRender()}
 				</div>
 			</form>
-		
 	</div>
 }
-
 const mapStateToProps = state => {
 	return {
 		email: state.loginEmail,

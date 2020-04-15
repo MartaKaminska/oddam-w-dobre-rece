@@ -53,7 +53,7 @@
 					}
 				}
 				.checked span::before {
-						background-color: $important-color;
+					background-color: $important-color;
 				}
 			}
 			.dropdown-element {
@@ -84,6 +84,20 @@
 					}
 				}
 			}
+			input {
+				font-family: $font-base;
+				color:$base-color;
+				height: 30px;
+				font-size: 14px;
+				background-color: rgba(0,0,0,0);
+				border: 1px solid $base-color;
+				padding-left: 5px;
+			}
+			h4 {
+				margin: 20px 0;
+				font-weight: 900;
+				color: $black-color;
+			}
 		}
 		button.prev {
 			width: 130px;
@@ -94,7 +108,7 @@
 			border: 1px solid $base-color;
 			cursor: pointer;
 			position: absolute;
-			bottom: 15vh;
+			bottom: 5vh;
 		}
 		button.next {
 			width: 130px;
@@ -105,8 +119,8 @@
 			border: 1px solid $base-color;
 			cursor: pointer;
 			position: absolute;
-			bottom: 15vh;
-			left: 300px;
+			bottom: 5vh;
+			left: 350px;
 		}
 	}
 }

@@ -33,7 +33,6 @@ function HomeFoundation(props) {
 			{pageNumbers}
 		</ul>
 	</section>
-
 }
 const mapStateToProps = state => {
 	return {

@@ -40,3 +40,45 @@ export const formOrganization = (name = '', action) => {
 	};
 	return name;
 };
+export const formAddressStreet = (street = '', action) => {
+	if(action.type === 'FORM_ADDRESS_STREET') {
+		return action.payload;
+	};
+	return street
+};
+export const formAddressCity = (city = '', action) => {
+	if(action.type === 'FORM_ADDRESS_CITY') {
+		return action.payload;
+	};
+	return city;
+};
+export const formAddressCode = (code = '', action) => {
+	if(action.type === 'FORM_ADDRESS_CODE') {
+		return action.payload;
+	};
+	return code;
+};
+export const formAddressTelephone = (number = '', action) => {
+	if(action.type === 'FORM_ADDRESS_TELEPHONE') {
+		return action.payload;
+	};
+	return number;
+};
+export const formPickUpDate = (date = new Date(), action) => {
+	if(action.type === 'FORM_PICKUP_DATE') {
+		return action.payload;
+	};
+	return date;
+};
+export const formPickUpHour = (hour = new Date(), action) => {
+	if(action.type === 'FORM_PICKUP_HOUR') {
+		return action.payload;
+	};
+	return hour;
+};
+export const formPickUpNotes = (notes = '', action) => {
+	if(action.type === 'FORM_PICKUP_NOTES') {
+		return action.payload;
+	};
+	return notes;
+};

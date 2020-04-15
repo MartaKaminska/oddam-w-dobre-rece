@@ -33,7 +33,6 @@ function HomeAssociations(props) {
 			{pageNumbers}
 		</ul>
 	</section>
-
 }
 const mapStateToProps = state => {
 	return {

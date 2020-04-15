@@ -25,7 +25,6 @@ function HomeLocal(props) {
 						</li>
 		pageNumbers.push(page)
 	}
-
 	return <section>
 		<ul className="list">
 			{elements}
@@ -34,7 +33,6 @@ function HomeLocal(props) {
 			{pageNumbers.length > 1 ? pageNumbers : null}
 		</ul>
 	</section>
-
 }
 const mapStateToProps = state => {
 	return {

@@ -6,19 +6,22 @@ import { NavLink } from 'react-router-dom';
 function TopMenu(props) {
 	const logout = () => {
 		props.loginValidation(false);
-		props.registerValidation(false)
+		props.registerValidation(false);
 		props.loginEmail('');
 		props.loginPassword('');
 		props.confRegisterPassword('');
+		console.log(props)
 	}
 	const show = () => {
 		if(props.login || props.register) {
+			console.log('login' + props.register)
 			return <ul className="top-menu">
-				<li>{props.email}</li>
+				<li className="email">{props.email}</li>
 				<li><NavLink to='/form' activeClassName="active-top-menu">Oddaj rzeczy</NavLink></li>
 				<li onClick={logout}><NavLink to='/logout' activeClassName="active-top-menu">Wyloguj</NavLink></li>
 			</ul>
 		} else {
+			console.log('logout' + props.register)
 			return <ul className="top-menu">
 				<li><NavLink to='/login' activeClassName="active-top-menu">Zaloguj się</NavLink></li>
 				<li><NavLink to='/register' activeClassName="active-top-menu">Załóż konto</NavLink></li>

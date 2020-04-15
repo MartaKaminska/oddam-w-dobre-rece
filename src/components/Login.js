@@ -51,10 +51,8 @@ function Login(props) {
 					</NavLink>
 				</div>
 			</form>
-		
 	</div>
 }
-
 const mapStateToProps = state => {
 	return {
 		email: state.loginEmail,
