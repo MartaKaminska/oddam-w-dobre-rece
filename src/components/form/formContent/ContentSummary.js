@@ -1,8 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { formStep, formNext } from '../../../actions/form';
-import { icon } from '../../../assets/Icon.png';
-import { icon1 } from '../../../assets/Icon-1.png';
 
 function ContentSummary(props) {
 	const day = props.date.getDate();
@@ -25,11 +23,9 @@ function ContentSummary(props) {
 				<div>
 					<h4>Oddajesz:</h4>
 					<div>
-						{/* <img src={icon} alt="clothes-icon" /> */}
 						<p>{props.bags} worki, {props.donation}, {props.who}</p>
 					</div>
 					<div>
-						{/* <img src={icon1} alt="where-icon" /> */}
 						<p>dla lokalizacji: {props.location}</p>
 					</div>
 				</div>

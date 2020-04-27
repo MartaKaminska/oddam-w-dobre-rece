@@ -25,23 +25,10 @@
 	flex-direction: column;
 	justify-content: center;
 	position: relative;
-	.bottom-menu {
-		ul {
-			position: absolute;
-			top: 90px;
-			right: 0;
-			display: flex;
-			justify-content: flex-end;
-			li {
-				padding: 9px 20px;
-				font-size: 18px;
-				a {
-					color: $base-color;
-					text-decoration: none;
-					cursor: pointer;
-				}
-			}
-		}
+	.header-right-column-content {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
 	}
 	h1 {
 		font-size: 28px;
@@ -50,7 +37,7 @@
 		margin-top: 150px;
 	}
 	img {
-		margin: 25px 0 40px 0;
+		margin: 25px auto;
 	}
 	.header-buttons {
 		display: flex;
@@ -77,4 +64,29 @@
 }
 .active-bottom-menu {
 	border: 0.75px solid $base-color;
+}
+@media(max-width: 750px) {
+	.header {
+		flex-wrap: wrap-reverse;
+		height: auto;
+		.header-left-column{
+			height: auto;
+			width: 100vw;
+			background-size: cover;
+			display: flex;
+			justify-content: flex-end;
+			img {
+				height: 100vh;
+				width: auto;
+			}
+		}
+		.header-right-column {
+			width: 100vw;
+			.header-right-column-content {
+				margin: 0 auto;
+				width: 70vw;
+				justify-content: center;
+			}
+		}
+	}
 }

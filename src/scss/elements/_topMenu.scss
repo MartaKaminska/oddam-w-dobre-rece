@@ -1,8 +1,7 @@
-$margin-right: 5vw;
 .top-menu {
 	position: absolute;
 	top: 37px;
-	padding-right: $margin-right;
+	padding-right: 5vw;
 	right: 0;
 	display: flex;
 	justify-content: flex-end;
@@ -28,4 +27,12 @@ $margin-right: 5vw;
 }
 .active-top-menu {
 	border: 0.75px solid $important-color;
+}
+@media(max-width: 750px) {
+	.top-menu {
+		flex-direction: column;
+		li {
+			padding: 10px;
+		}
+	}
 }

@@ -19,3 +19,10 @@
 		}
 	}
 }
+@media(max-width: 750px) {
+	.footer {
+		bottom: -150px;
+		margin: 0 auto 20px;
+		height: 20px;
+	}
+}

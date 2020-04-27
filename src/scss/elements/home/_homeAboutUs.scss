@@ -44,3 +44,20 @@
 		}
 	}
 }
+@media(max-width: 750px) {
+	.home-about-us {
+		height: auto;
+		flex-wrap: wrap;
+		.about-left-column {
+			width: 100vw;
+			h2 {
+				margin-top: 20px;
+			}
+		}
+		.about-right-column {
+			width: 100vw;
+			height: auto;
+			justify-content: center;
+		}
+	}
+}

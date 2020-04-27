@@ -22,3 +22,32 @@
 		}
 	}
 }
+@media(max-width: 750px) {
+	.content-step-four {
+		display: flex;
+		flex-direction: row;
+		.step-four-column {
+			display: flex;
+			flex-direction: column;
+			width: auto;
+			margin-right: 10px;
+			label {
+				width: 200px;
+				display: flex;
+				justify-content: space-between;
+				input {
+					width: 100px;
+				}
+				textarea {
+					height: 90px;
+					font-family: $font-base;
+					color:$base-color;
+					font-size: 14px;
+					background-color: rgba(0,0,0,0);
+					border: 1px solid $base-color;
+					padding: 5px;
+				}
+			}
+		}
+	}
+}

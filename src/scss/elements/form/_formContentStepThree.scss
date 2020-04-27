@@ -24,14 +24,13 @@
 	}
 	ul {
 		width: 50vw;
+		height: auto;
 		display: flex;
-		flex-direction: row;
 		flex-wrap: wrap;
 		text-align: center;
 		line-height: 30px;
 		li {
 			label {
-				
 				input {
 					display: none;
 				}
@@ -61,12 +60,59 @@
 					content: 'niepełnosprawnym';
 					@include before;
 					width: 170px;
-
 				}
 				span.elderlyPerson::before {
 					content: 'osobom starsym';
 					@include before;
 					width: 160px;
+				}
+			}
+		}
+	}
+}
+@media(max-width: 750px) {
+	.ui.dropdown {
+		width: 10px;
+		font-size: 12px;
+	}
+	.form-content .content form li {
+		margin: 0;
+	}
+	.content-step-three {
+		ul {
+			width: 100vw;
+			li {
+				font-size: 12px;
+				label {
+					@mixin before() {
+						height: 20px;
+						line-height: 20px;
+					}
+					span.children::before {
+						content: 'dzieciom';
+						@include before;
+						width: 100px;
+					}
+					span.singleMother::before {
+						content: 'samotnym matkom';
+						@include before;
+						width: 180px;
+					}
+					span.homeless::before {
+						content: 'bezdomnym';
+						@include before;
+						width: 120px;
+					}
+					span.disabled::before {
+						content: 'niepełnosprawnym';
+						@include before;
+						width: 170px;
+					}
+					span.elderlyPerson::before {
+						content: 'osobom starsym';
+						@include before;
+						width: 160px;
+					}
 				}
 			}
 		}

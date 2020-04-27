@@ -1,57 +1,80 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { loginEmail, loginPassword, loginValidation } from '../actions/regLoginForm';
 import { NavLink } from 'react-router-dom'
 // elements
 import PanelMenu from './navigation/PanelMenu';
 import decoration from '../assets/Decoration.svg';
+// function
+import { checkUserList } from './localStorage';
 
-function Login(props) {
-	const handleChangeEmail = (e) => {
-		props.loginEmail(e.target.value);
+class Login extends Component {
+	constructor(props) {
+		super(props);
+		this.state = {
+			login: ''
+		}
 	}
-	const handleChangePassword = (e) => {
-		props.loginPassword(e.target.value);
+	handleChangeEmail = (e) => {
+		this.props.loginEmail(e.target.value);
 	}
-	const validate = (e) => {
-		e.preventDefault();
-		props.loginValidation(true);
+	handleChangePassword = (e) => {
+		this.props.loginPassword(e.target.value);
 	}
-	return <div className="login">
-		<PanelMenu />
-		<h2>Zaloguj się</h2>
-		<img src={decoration} alt="decoration" />
-		{props.validForm && <p className="valid-form">Błędny email lub hasło!</p> }
-			<form onSubmit={e => this.validate(e)}>
-				<div className="form-content">
-					<div className="form-input">
-						<label htmlFor="email">Email</label>
-						<input 
-							type="email"
-							name="email"
-							onChange={(e) => handleChangeEmail(e)}
-							value={props.email} />
+	validate = () => {
+		if(checkUserList(this.props.email, this.props.password)) {
+			this.setState({ login: 'yes' })
+		} else {
+			this.setState({ login: 'no' })
+		}
+	}
+	changeLoginValidation = () => {
+		this.props.loginValidation(true);
+	}
+	render() {
+		return <div className="login">
+			<PanelMenu />
+			<h2>Zaloguj się</h2>
+			<img src={decoration} alt="decoration" />
+				<form onSubmit={e => this.validate(e)}>
+					{this.state.login === 'no' ? 
+						<p className="valid-form">Błędny adres lub haslo. Proszę spróbuj ponownie lub załóż konto</p>: 
+						null}
+					<div className="form-content">
+						<div className="form-input">
+							<label htmlFor="email">Email</label>
+							<input 
+								type="email"
+								name="email"
+								onChange={(e) => this.handleChangeEmail(e)}
+								value={this.props.email} />
+						</div>
+						<div className="form-input">
+							<label htmlFor="password">Hasło</label>
+							<input 
+								onMouseLeave={this.validate}
+								type="password" 
+								name="password"
+								onChange={(e) => this.handleChangePassword(e)}
+								value={this.props.password} />
+						</div>
 					</div>
-					<div className="form-input">
-						<label htmlFor="password">Hasło</label>
-						<input 
-							type="password" 
-							name="password"
-							onChange={(e) => handleChangePassword(e)}
-							value={props.password} />
+					<div className="buttons">
+						<NavLink to='/register'>
+								Załóż konto
+						</NavLink>
+						{this.state.login === 'yes' ?
+							<NavLink to='/' 
+								onClick={this.changeLoginValidation}>
+									Zaloguj się
+							</NavLink>:
+						<div
+							className='no-active'>Zaloguj się</div>
+					}
 					</div>
-				</div>
-				<div className="buttons">
-					<NavLink to='/register'>
-							Załóż konto
-					</NavLink>
-					<NavLink to='/' 
-						onClick={(e) => validate(e)}>
-							Zaloguj się
-					</NavLink>
-				</div>
-			</form>
-	</div>
+				</form>
+		</div>
+	}
 }
 const mapStateToProps = state => {
 	return {

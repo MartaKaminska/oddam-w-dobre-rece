@@ -1,6 +1,5 @@
 import React from 'react';
 import { connect } from 'react-redux';
-
 // elements
 import ContentStepOne from './ContentStepOne';
 import ContentStepTwo from './ContentStepTwo';

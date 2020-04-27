@@ -41,3 +41,17 @@
 		margin: 5px auto 10px;
 	}
 }
+@media(max-width: 750px) {
+	.home-contact {
+		flex-wrap: wrap;
+		height: auto;
+		width: 100vw;
+		.contact-left-column {
+			width: 100vw;
+		}
+		.contact-right-column {
+			width: 100vw;
+			padding: 20px;
+		}
+	}
+}

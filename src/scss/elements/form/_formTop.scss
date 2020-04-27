@@ -9,7 +9,6 @@
 		img {
 			height: 100vh;
 			width: auto;
-			
 		}
 	}
 	.form-top-right-column {
@@ -61,6 +60,33 @@
 					position: absolute;
 					left: 3px;
 				}
+			}
+		}
+	}
+}
+@media(max-width: 750px) {
+	.form-top {
+		height: auto;
+		flex-wrap: wrap-reverse;
+		justify-content: center;
+		.form-top-right-column {
+			height: 100vh;
+			.form-top-four-stats {
+				div {
+					font-size: 12px;
+					&::before {
+						width: 80px;
+						height: 80px;
+						left: 15px;
+					}
+				}
+			}
+		}
+		.form-top-left-column {
+			width: 100vw;
+			img {
+				width: 100vw;
+				height: auto;
 			}
 		}
 	}
